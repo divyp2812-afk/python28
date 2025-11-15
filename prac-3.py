@@ -1,4 +1,4 @@
-print("Welcome to the student Data Organizer! ")
+print("Welcome to the Student Data Organizer!")
 
 students = []
 
@@ -10,82 +10,82 @@ while True:
     print("5. Display subjects offered")
     print("6. Exit")
 
+    
     choice = int(input("Choose a number: "))
 
-    
     if choice == 1:
         student_id = input("Enter Student ID: ")
         name = input("Enter Name: ")
         age = input("Enter Age: ")
         grade = input("Enter Grade: ")
         dob = input("Enter Date of Birth: ")
-        sub = input("Enter Subjects: ")
+        subjects = input("Enter Subjects: ")
 
-        student = [student_id, name, age, grade, dob, sub]
+        student = [student_id, name, age, grade, dob, subjects]
         students.append(student)
+        print("stutent added successfully!")
 
-        print("Student added successfully!")
-
-    
     elif choice == 2:
         if not students:
             print("No student records found.")
         else:
             print("\n--- Student Records ---")
             for s in students:
-                print("ID:", s[0], "| Name:", s[1], "| Age:", s[2],
-                      "| Grade:", s[3], "| DOB:", s[4], "| Subjects:", s[5])
+                print("ID:", s[0])
+                print("Name:", s[1])
+                print("Age:", s[2])
+                print("Grade:", s[3])
+                print("DOB:", s[4])
+                print("Subjects:", end=" ")
+                for subject in s[5]:
+                    print(subject.strip(), end=", ")
+                print("\n--------")
 
-   
     elif choice == 3:
         student_id = input("Enter student ID to update: ")
         found = False
-
         for s in students:
             if s[0] == student_id:
                 s[1] = input("Enter new name: ")
                 s[2] = input("Enter new age: ")
                 s[3] = input("Enter new grade: ")
                 s[4] = input("Enter new date of birth: ")
-                s[5] = input("Enter new subjects: ")
-                print("Student updated!")
+                s[5] = input("Enter new subjects (comma-separated): ").split(",")
+                print("student updated!")
                 found = True
                 break
-
         if not found:
             print("Student not found.")
 
-    
     elif choice == 4:
         student_id = input("Enter student ID to delete: ")
         found = False
-
         for s in students:
             if s[0] == student_id:
                 students.remove(s)
-                print("Student deleted!")
+                print(" Student deleted!")
                 found = True
                 break
-
         if not found:
             print("Student not found.")
 
-   
     elif choice == 5:
         print("\n--- Subjects Offered ---")
-        subjects = set()
+        subject_set = []
         for s in students:
-            subjects.add(s[5])
-        print(", ".join(subjects) if subjects else "No subjects available.")
+            for subject in s[5]:
+                subject = subject.strip()
+                if subject not in subject_set:
+                    subject_set.append(subject)
+        if subject_set:
+            for sub in subject_set:
+                print(sub)
+        else:
+            print("No subjects available.")
 
-   
     elif choice == 6:
-        print("Exiting program...")
+        print(" Exiting program...")
         break
 
     else:
         print("Invalid choice. Try again!")
-
-print("Welcome to the student Data Organizer! ")
-
-students = []
