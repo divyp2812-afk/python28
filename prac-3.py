@@ -36,10 +36,7 @@ while True:
                 print("Age:", s[2])
                 print("Grade:", s[3])
                 print("DOB:", s[4])
-                print("Subjects:", end=" ")
-                for subject in s[5]:
-                    print(subject.strip(), end=", ")
-                print("\n--------")
+                print("Subjects:", s[5])
 
     elif choice == 3:
         student_id = input("Enter student ID to update: ")
@@ -71,17 +68,10 @@ while True:
 
     elif choice == 5:
         print("\n--- Subjects Offered ---")
-        subject_set = []
+        subject = set()
         for s in students:
-            for subject in s[5]:
-                subject = subject.strip()
-                if subject not in subject_set:
-                    subject_set.append(subject)
-        if subject_set:
-            for sub in subject_set:
-                print(sub)
-        else:
-            print("No subjects available.")
+            subject.add(s[5])
+        print(", ".join(subject) if subject else "No subject available.")
 
     elif choice == 6:
         print(" Exiting program...")
