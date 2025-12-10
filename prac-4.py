@@ -17,7 +17,7 @@ while True:
     choice = int(input("Please enter your Choice: "))
 
     if choice == 1:
-        data = str(input("Enter data for 1D array(separated by spaces): "))
+        data = input("Enter data for 1D array(separated by spaces): ")
         arr = list(map(int,data.split()))
         print(arr)
         print()
@@ -42,15 +42,12 @@ while True:
         print(f"Factorial of {num} is: {result}")
 
     elif choice == 4:
-        num = int(input("Enter a Threshold value to filter out data above this value:"))
-        
-        def filtered_data(data, threshold):
-            return [x for x in data if threshold <= x]
-        if len == 0:
-            print("Null")
-        else:
-            result = filtered_data(arr,num)
-            print("Filtered Data:",result)
+        data = list(map(int, data.split()))
+        num = int(input("Enter a threshold value to filter out data above the value: "))
+
+        filtered = list(filter(lambda x: x >= num, data))
+
+        print("Filtered data:", filtered)
             
     elif choice == 5:
         print("\nChoose sorting option:")
@@ -80,21 +77,3 @@ while True:
     
     else:
         print("Invalid Choice, Try again!")
-    
-
-    
-
-
-
-            
-
-
-
-        
-        
-   
-
-
-
-
-
