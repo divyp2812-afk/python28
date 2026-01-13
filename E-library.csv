@@ -1,0 +1,6 @@
+Transaction ID,Date,User ID,Book Title,Genre,Borrowing Duration (Days)
+TXN001,2026-01-10,U12345,The Silent Patient,Thriller,14
+TXN002,2026-01-11,U67890,Atomic Habits,Self-help,21
+TXN003,2026-01-12,U54321,To Kill a Mockingbird,Classic,30
+TXN004,2026-01-12,U98765,Sapiens: A Brief History of Humankind,History,18
+TXN005,2026-01-13,U11223,The Hobbit,Fantasy,25
