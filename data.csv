@@ -1,0 +1,8 @@
+SalesID,Product,Sales,Region,year
+101,Product A,500,North,2022
+102,Product B,600,South,2022
+103,Product C,700,East,2022
+104,Product D,800,West,2022
+105,Product E,550,North,2022
+106,Product F,650,South west,2023
+107,Product G,450,west coast,2023
